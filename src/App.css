@@ -37,3 +37,26 @@ body {
 .ConverterContainer {
   margin-top: 10px;
 }
+
+.ui.card {
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.ui.grid>.row {
+  margin-left: 100px;
+  margin-right: 100px;
+  justify-content: center;
+}
+
+.ui.grid {
+  margin-top: 50px;
+}
+
+.ui.card:first-child {
+  margin-top: 14px;
+}
+
+.ui.card:last-child {
+  margin-bottom: 14px;
+}

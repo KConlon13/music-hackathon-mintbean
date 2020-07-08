@@ -1,6 +1,7 @@
 import React from 'react';
 import './App.css';
 import { Input, Label } from 'semantic-ui-react'
+import CardGroup from "./CardGroup";
 
 class ConverterContainer extends React.Component {
     state={
@@ -23,17 +24,13 @@ class ConverterContainer extends React.Component {
     }
     handleSearchClick = (e) => {
         e.preventDefault();
-        this.initiateExchange(this.state.searchTerm)
         this.setState({
-            searchTerm: "",
             searchClicked: true,
         })
     }
-    initiateExchange = (input) => {
-        console.log("dis is an input hooray", input)
-    }
 
   render(){
+
     return (
       <div className="ConverterContainer">
           <form onSubmit={(e)=> this.handleSearchClick(e)} autoComplete="off">
@@ -51,6 +48,7 @@ class ConverterContainer extends React.Component {
                     <Label>.00</Label>
                 </Input>
              </form>
+            {this.state.searchTerm && this.state.rateContainer ? <CardGroup obj={this.state.rateContainer} input={this.state.searchTerm}/> : null}
       </div>
     );
   }
