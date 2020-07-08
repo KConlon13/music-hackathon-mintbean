@@ -13,7 +13,7 @@ class CardGroup extends React.Component {
             let result = (rate*val).toFixed(2);
             console.log(result)
             return (
-                <Card header={key} description={result} color="purple"/>
+                <Card header={key} description={result} color="purple"></Card>
             )
           });
       }

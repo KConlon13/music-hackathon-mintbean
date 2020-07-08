@@ -45,7 +45,7 @@ class ConverterContainer extends React.Component {
                     >
                     <Label basic>$</Label>
                         <input />
-                    <Label>.00</Label>
+                    {this.state.searchTerm.includes('.') ? null : <Label>.00</Label>}
                 </Input>
              </form>
             {this.state.searchTerm && this.state.rateContainer ? <CardGroup obj={this.state.rateContainer} input={this.state.searchTerm}/> : null}
