@@ -1,6 +1,6 @@
 import React from 'react';
 import './App.css';
-import { Grid, Card } from 'semantic-ui-react';
+import { Grid, Card, Icon } from 'semantic-ui-react';
 
 class CardGroup extends React.Component {
 
@@ -10,10 +10,24 @@ class CardGroup extends React.Component {
         cards = Object.entries(this.props.obj).map(([key, value]) => {
             let rate = Number(value)
             let val = Number(this.props.input)
-            let result = (rate*val).toFixed(2);
+            let result = (rate*val).toFixed(2).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
             console.log(result)
+            let cardColor;
+            if (rate >= 1){
+                cardColor="green"
+            } else {
+                cardColor="red"
+            }
             return (
-                <Card header={key} description={result} color="purple"></Card>
+                <Card color="purple">
+                    <Card.Content>
+                        <Card.Header>{key}</Card.Header>
+                        <div>
+                            <Icon name="exchange" color={cardColor}/>
+                            <Card.Description>{result}</Card.Description>
+                        </div>
+                    </Card.Content>
+                </Card>
             )
           });
       }

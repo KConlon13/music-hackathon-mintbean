@@ -60,3 +60,7 @@ body {
 .ui.card:last-child {
   margin-bottom: 14px;
 }
+
+/* .ui.card>.content>.header:not(.ui) {
+  margin-bottom: 7px;
+} */
