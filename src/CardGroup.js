@@ -26,10 +26,10 @@ class CardGroup extends React.Component {
                         <Card.Header onClick={()=>window.open(`https://www.google.com/search?q=${key}+currency`, '_blank')}>
                             <a>{key}</a>
                         </Card.Header>
-                        <div>
+                        <div id="exchange-icon">
                             <Icon name="exchange" color={cardColor}/>
-                            <Card.Description>{result}</Card.Description>
                         </div>
+                            <Card.Description>{result}</Card.Description>
                     </Card.Content>
                 </Card>
             )

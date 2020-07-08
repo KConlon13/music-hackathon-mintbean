@@ -34,6 +34,10 @@ body {
   height: 100%;
 }
 
+#money-logo:hover {
+  animation-play-state: paused;
+}
+
 .ConverterContainer {
   margin-top: 10px;
 }
@@ -61,6 +65,7 @@ body {
   margin-bottom: 14px;
 }
 
-/* .ui.card>.content>.header:not(.ui) {
-  color: rgb(51, 110, 153);
-} */
+#exchange-icon {
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
