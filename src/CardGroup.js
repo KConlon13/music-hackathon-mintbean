@@ -21,7 +21,9 @@ class CardGroup extends React.Component {
             return (
                 <Card color="purple">
                     <Card.Content>
-                        <Card.Header>{key}</Card.Header>
+                        <Card.Header>
+                            <a href={`https://www.google.com/search?q=${key}+currency`} >{key}</a>
+                        </Card.Header>
                         <div>
                             <Icon name="exchange" color={cardColor}/>
                             <Card.Description>{result}</Card.Description>
