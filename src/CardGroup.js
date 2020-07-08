@@ -11,7 +11,9 @@ class CardGroup extends React.Component {
             let rate = Number(value)
             let val = Number(this.props.input)
             let result = (rate*val).toFixed(2).toString().replace(/(\d)(?=(\d{3})+(?!\d))/g, '$1,');
-            console.log(result)
+            if (isNaN(val) === true){
+                result = "-";
+            }
             let cardColor;
             if (rate >= 1){
                 cardColor="green"
@@ -21,8 +23,8 @@ class CardGroup extends React.Component {
             return (
                 <Card color="purple">
                     <Card.Content>
-                        <Card.Header>
-                            <a href={`https://www.google.com/search?q=${key}+currency`} >{key}</a>
+                        <Card.Header onClick={()=>window.open(`https://www.google.com/search?q=${key}+currency`, '_blank')}>
+                            <a>{key}</a>
                         </Card.Header>
                         <div>
                             <Icon name="exchange" color={cardColor}/>
